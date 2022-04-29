@@ -3,34 +3,29 @@ import 'package:flutter/material.dart';
 class navigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.only(right: 70),
-        child: Drawer(
-            backgroundColor: Colors.blue,
-            child: Column(children: [
-              Expanded(
-                  child: SingleChildScrollView(
-                      child: Column(
-                          //padding: EdgeInsets.zero,
-                          children: <Widget>[
-                    // createDrawerHeader(),
-                    createDrawerBodyItem(
-                        icon: Icons.account_circle,
-                        text: 'My Profile',
-                        onTap: () {}),
-                    createDrawerBodyItem(
-                        icon: Icons.web_asset, text: 'Dashboard', onTap: () {}),
-                    createDrawerBodyItem(
-                        icon: Icons.info, text: 'About us', onTap: () {}),
-                    createDrawerBodyItem(
-                        icon: Icons.help, text: 'Help', onTap: () {}),
-                    createDrawerBodyItem(
-                        icon: Icons.logout, text: 'Log out', onTap: () {})
-                  ])))
-            ])),
-      ),
-    );
+    return Drawer(
+        backgroundColor: Colors.blue,
+        child: Column(children: [
+          Expanded(
+              child: SingleChildScrollView(
+                  child: Column(
+                      //padding: EdgeInsets.zero,
+                      children: <Widget>[
+                // createDrawerHeader(),
+                createDrawerBodyItem(
+                    icon: Icons.account_circle,
+                    text: 'My Profile',
+                    onTap: () {}),
+                createDrawerBodyItem(
+                    icon: Icons.web_asset, text: 'Dashboard', onTap: () {}),
+                createDrawerBodyItem(
+                    icon: Icons.info, text: 'About us', onTap: () {}),
+                createDrawerBodyItem(
+                    icon: Icons.help, text: 'Help', onTap: () {}),
+                createDrawerBodyItem(
+                    icon: Icons.logout, text: 'Log out', onTap: () {})
+              ])))
+        ]));
   }
 
   Widget createDrawerHeader() {

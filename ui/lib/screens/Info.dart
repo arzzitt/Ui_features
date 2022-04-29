@@ -30,6 +30,24 @@ class _InfoState extends State<Info> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.sort,
+                color: Colors.blue,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
+      ),
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: Container(
         height: 100,
@@ -59,29 +77,9 @@ class _InfoState extends State<Info> {
         ]),
       ),
       backgroundColor: Colors.white,
+      drawer: navigationDrawer(),
       body: SafeArea(
         child: Column(children: [
-          Row(
-            children: [
-              Container(
-                child: GestureDetector(
-                  child: GradientIcon(
-                      Icons.sort,
-                      30.0,
-                      const LinearGradient(
-                          colors: [Color(0xff038c8c), Color(0xff666dad)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight)),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return navigationDrawer();
-                    }));
-                  },
-                ),
-              ),
-            ],
-          ),
           const SizedBox(
             height: 10.0,
           ),
